@@ -76,7 +76,7 @@
 
 1. **克隆项目**
    ```bash
-   git clone https://github.com/yourusername/travel-explore-miniprogram.git
+   git clone https://github.com/lzcjsyr/travel-explore-miniprogram.git
    cd travel-explore-miniprogram
    ```
 
@@ -233,9 +233,9 @@ exports.main = async (event, context) => {
 
 ## 📞 联系我们
 
-- 📧 Email: your-email@example.com
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/travel-explore-miniprogram/issues)
-- 💬 讨论: [GitHub Discussions](https://github.com/yourusername/travel-explore-miniprogram/discussions)
+- 📧 Email: lzcjsyr@hotmail.com
+- 🐛 Issues: [GitHub Issues](https://github.com/lzcjsyr/travel-explore-miniprogram/issues)
+- 💬 讨论: [GitHub Discussions](https://github.com/lzcjsyr/travel-explore-miniprogram/discussions)
 
 ## 🙏 致谢
 
