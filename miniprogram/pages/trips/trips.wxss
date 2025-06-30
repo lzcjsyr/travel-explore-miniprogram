@@ -1,0 +1,195 @@
+/* pages/trips/trips.wxss */
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding-bottom: 200rpx;
+}
+
+/* 头部样式 */
+.header {
+  background-color: #ffffff;
+  padding: 20rpx 32rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* 标签页样式 */
+.tabs {
+  display: flex;
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 32rpx 0;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #007AFF;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60rpx;
+  height: 4rpx;
+  background-color: #007AFF;
+  border-radius: 2rpx;
+}
+
+.tab-text {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+/* 预订列表样式 */
+.booking-list {
+  padding: 0 32rpx;
+}
+
+.booking-item {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.route {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333333;
+}
+
+.status {
+  font-size: 24rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 12rpx;
+  font-weight: 500;
+}
+
+.status.confirmed {
+  background-color: #e8f5e8;
+  color: #52c41a;
+}
+
+.status.pending {
+  background-color: #fff3cd;
+  color: #faad14;
+}
+
+.status.cancelled {
+  background-color: #ffeaea;
+  color: #ff4d4f;
+}
+
+.booking-details {
+  margin-bottom: 24rpx;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 16rpx;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  font-size: 28rpx;
+  color: #666666;
+  width: 120rpx;
+  flex-shrink: 0;
+}
+
+.value {
+  font-size: 28rpx;
+  color: #333333;
+  flex: 1;
+}
+
+.booking-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-button {
+  background-color: #007AFF;
+  color: #ffffff;
+  border: none;
+  border-radius: 24rpx;
+  padding: 16rpx 32rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.action-button::after {
+  border: none;
+}
+
+/* 空状态样式 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 32rpx;
+  text-align: center;
+}
+
+.empty-icon {
+  width: 120rpx;
+  height: 120rpx;
+  opacity: 0.3;
+  margin-bottom: 32rpx;
+}
+
+.empty-text {
+  font-size: 32rpx;
+  color: #999999;
+  margin-bottom: 48rpx;
+}
+
+.empty-button {
+  background-color: #007AFF;
+  color: #ffffff;
+  border: none;
+  border-radius: 24rpx;
+  padding: 24rpx 48rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.empty-button::after {
+  border: none;
+}

@@ -1,0 +1,101 @@
+<!--pages/trips/trips.wxml-->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="header-content">
+      <view class="title-container">
+        <text class="title">{{pageTitle}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 标签页 -->
+  <view class="tabs">
+    <view class="tab-item {{activeTab === 'flights' ? 'active' : ''}}" bindtap="onTabChange" data-tab="flights">
+      <text class="tab-text">{{tabFlights}}</text>
+    </view>
+    <view class="tab-item {{activeTab === 'hotels' ? 'active' : ''}}" bindtap="onTabChange" data-tab="hotels">
+      <text class="tab-text">{{tabHotels}}</text>
+    </view>
+  </view>
+
+  <!-- 航班预订列表 -->
+  <view wx:if="{{activeTab === 'flights'}}" class="booking-list">
+    <view wx:for="{{flightBookings}}" wx:key="id" class="booking-item">
+      <view class="booking-header">
+        <text class="route">{{item.routeDisplay}}</text>
+        <text class="status {{item.statusClass}}">{{confirmedStatus}}</text>
+      </view>
+      <view class="booking-details">
+        <view class="detail-row">
+          <text class="label">{{flightNumber}}</text>
+          <text class="value">{{item.flightNumber}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="label">{{dateLabel}}</text>
+          <text class="value">{{item.date}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="label">{{timeLabel}}</text>
+          <text class="value">{{item.time}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="label">{{passengerLabel}}</text>
+          <text class="value">{{item.passenger}}</text>
+        </view>
+      </view>
+      <view class="booking-actions">
+        <button class="action-button" bindtap="onViewBooking" data-booking="{{item}}">
+          {{viewButton}}
+        </button>
+      </view>
+    </view>
+    
+    <!-- 空状态 -->
+    <view wx:if="{{flightBookings.length === 0}}" class="empty-state">
+      <image src="/images/search.svg" class="empty-icon"></image>
+      <text class="empty-text">{{noFlightsText}}</text>
+      <button class="empty-button" bindtap="onSearchFlights">{{searchFlightsText}}</button>
+    </view>
+  </view>
+
+  <!-- 酒店预订列表 -->
+  <view wx:if="{{activeTab === 'hotels'}}" class="booking-list">
+    <view wx:for="{{hotelBookings}}" wx:key="id" class="booking-item">
+      <view class="booking-header">
+        <text class="route">{{item.hotelName}}</text>
+        <text class="status {{item.statusClass}}">{{confirmedStatus}}</text>
+      </view>
+      <view class="booking-details">
+        <view class="detail-row">
+          <text class="label">{{addressLabel}}</text>
+          <text class="value">{{item.address}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="label">{{checkinLabel}}</text>
+          <text class="value">{{item.checkinDate}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="label">{{checkoutLabel}}</text>
+          <text class="value">{{item.checkoutDate}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="label">{{roomTypeLabel}}</text>
+          <text class="value">{{item.roomType}}</text>
+        </view>
+      </view>
+      <view class="booking-actions">
+        <button class="action-button" bindtap="onViewBooking" data-booking="{{item}}">
+          {{viewButton}}
+        </button>
+      </view>
+    </view>
+    
+    <!-- 空状态 -->
+    <view wx:if="{{hotelBookings.length === 0}}" class="empty-state">
+      <image src="/images/search.svg" class="empty-icon"></image>
+      <text class="empty-text">{{noHotelsText}}</text>
+      <button class="empty-button" bindtap="onSearchHotels">{{searchHotelsText}}</button>
+    </view>
+  </view>
+</view>

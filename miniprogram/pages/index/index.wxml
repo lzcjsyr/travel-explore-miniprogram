@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{pageTitle}}</text>
+    <text class="subtitle">{{pageSubtitle}}</text>
+  </view>
+  
+  <view class="content">
+    <view class="info-card">
+      <text class="label">{{openidLabel}}</text>
+      <text class="value">{{openid || loadingText}}</text>
+    </view>
+    
+    <view class="features">
+      <text class="features-title">{{featuresTitle}}</text>
+      <view class="feature-item">{{features.auth}}</view>
+      <view class="feature-item">{{features.cloudFunc}}</view>
+      <view class="feature-item">{{features.miniprogram}}</view>
+      <view class="feature-item">{{features.deploy}}</view>
+    </view>
+  </view>
+  
+  <view class="footer">
+    <cloudbase-badge show-text="{{true}}" />
+  </view>
+</view>

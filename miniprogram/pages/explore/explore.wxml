@@ -1,0 +1,71 @@
+<!--pages/explore/explore.wxml-->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="header-content">
+      <view class="title-container">
+        <text class="title">{{pageTitle}}</text>
+      </view>
+      <view class="setting-icon">
+        <image src="/images/settings.svg" class="icon-small"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 搜索框 -->
+  <view class="search-section">
+    <view class="search-box" bindtap="onSearchTap">
+      <view class="search-icon">
+        <image src="/images/search.svg" class="search-icon-img"></image>
+      </view>
+      <view class="search-input">
+        <text class="search-placeholder">{{searchPlaceholder}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 热门目的地 -->
+  <view class="section">
+    <view class="section-title">
+      <text class="section-title-text">{{popularDestinations}}</text>
+    </view>
+    <view class="destinations">
+      <view class="destinations-row">
+        <view wx:for="{{destinations}}" wx:key="id" wx:if="{{index < 2}}" class="destination-item" bindtap="onDestinationTap" data-city="{{item.id}}">
+          <image src="{{item.image}}" class="destination-image" mode="aspectFill"></image>
+          <view class="destination-name">
+            <text class="destination-text">{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="destinations-row">
+        <view wx:for="{{destinations}}" wx:key="id" wx:if="{{index >= 2}}" class="destination-item" bindtap="onDestinationTap" data-city="{{item.id}}">
+          <image src="{{item.image}}" class="destination-image" mode="aspectFill"></image>
+          <view class="destination-name">
+            <text class="destination-text">{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 推荐行程 -->
+  <view class="section">
+    <view class="section-title">
+      <text class="section-title-text">{{recommendedTrips}}</text>
+    </view>
+    <scroll-view class="recommendations" scroll-x="true">
+      <view wx:for="{{recommendations}}" wx:key="id" class="recommendation-item" bindtap="onRecommendationTap" data-type="{{item.id}}">
+        <image src="{{item.image}}" class="recommendation-image" mode="aspectFill"></image>
+        <view class="recommendation-info">
+          <view class="recommendation-title">
+            <text class="recommendation-title-text">{{item.name}}</text>
+          </view>
+          <view class="recommendation-desc">
+            <text class="recommendation-desc-text">{{item.description}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,201 @@
+/* pages/profile/profile.wxss */
+.container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 0;
+  padding-bottom: 200rpx;
+}
+
+/* 头部样式 */
+.header {
+  background-color: #ffffff;
+  padding: 32rpx 32rpx 16rpx 32rpx;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-button {
+  width: 96rpx;
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.back-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.title-container {
+  flex: 1;
+  text-align: center;
+  padding-right: 96rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #121417;
+  line-height: 46rpx;
+}
+
+/* 用户信息区域 */
+.user-section {
+  padding: 32rpx;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32rpx;
+}
+
+.user-avatar {
+  width: 256rpx;
+  height: 256rpx;
+  border-radius: 128rpx;
+  overflow: hidden;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.user-name {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #121417;
+  line-height: 56rpx;
+}
+
+.user-profile-link {
+  font-size: 32rpx;
+  font-weight: 400;
+  color: #61788a;
+  line-height: 48rpx;
+}
+
+.user-join-date {
+  font-size: 32rpx;
+  font-weight: 400;
+  color: #61788a;
+  line-height: 48rpx;
+}
+
+/* 区块样式 */
+.section {
+  margin-bottom: 16rpx;
+}
+
+.section-header {
+  padding: 32rpx 32rpx 16rpx 32rpx;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #121417;
+  line-height: 46rpx;
+}
+
+/* 行程列表样式 */
+.trip-list {
+  background-color: #ffffff;
+}
+
+.trip-item {
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+  gap: 32rpx;
+  height: 144rpx;
+  box-sizing: border-box;
+}
+
+.trip-icon {
+  width: 96rpx;
+  height: 96rpx;
+  background-color: #f0f2f5;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trip-icon-img {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.trip-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8rpx;
+}
+
+.trip-title {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #121417;
+  line-height: 48rpx;
+}
+
+.trip-date {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #61788a;
+  line-height: 42rpx;
+}
+
+/* 设置列表样式 */
+.setting-list {
+  background-color: #ffffff;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+  gap: 32rpx;
+  height: 112rpx;
+  box-sizing: border-box;
+}
+
+.setting-icon {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #f0f2f5;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.setting-icon-img {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.setting-title {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: #121417;
+  line-height: 48rpx;
+}

@@ -1,0 +1,180 @@
+/* pages/explore/explore.wxss */
+.container {
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding-bottom: 200rpx; /* 为底部导航留出空间 */
+}
+
+/* 头部样式 */
+.header {
+  background-color: #ffffff;
+  padding: 32rpx 32rpx 16rpx 32rpx;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-left: 96rpx; /* 平衡右侧图标 */
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #121417;
+  text-align: center;
+}
+
+.setting-icon {
+  width: 96rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-small {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+/* 搜索框样式 */
+.search-section {
+  padding: 24rpx 32rpx;
+}
+
+.search-box {
+  height: 96rpx;
+  border-radius: 24rpx;
+  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-icon {
+  padding: 32rpx;
+}
+
+.search-icon-img {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.search-input {
+  flex: 1;
+  padding-right: 32rpx;
+}
+
+.search-placeholder {
+  font-size: 32rpx;
+  color: #61788a;
+}
+
+/* 区块样式 */
+.section {
+  margin-bottom: 32rpx;
+}
+
+.section-title {
+  padding: 40rpx 32rpx 24rpx 32rpx;
+}
+
+.section-title-text {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #121417;
+}
+
+/* 热门目的地样式 */
+.destinations {
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.destinations-row {
+  display: flex;
+  flex-direction: row;
+  gap: 24rpx;
+}
+
+.destination-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.destination-image {
+  width: 100%;
+  height: 346rpx;
+  border-radius: 24rpx;
+}
+
+.destination-name {
+  margin-top: 24rpx;
+}
+
+.destination-text {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #121417;
+}
+
+/* 推荐行程样式 */
+.recommendations {
+  padding: 0 32rpx;
+  white-space: nowrap;
+}
+
+.recommendation-item {
+  display: inline-block;
+  width: 480rpx;
+  margin-right: 24rpx;
+  border-radius: 16rpx;
+  vertical-align: top;
+}
+
+.recommendation-image {
+  width: 100%;
+  height: 270rpx;
+  border-radius: 24rpx;
+}
+
+.recommendation-info {
+  margin-top: 32rpx;
+}
+
+.recommendation-title {
+  margin-bottom: 8rpx;
+}
+
+.recommendation-title-text {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #121417;
+}
+
+.recommendation-desc {
+  margin-top: 8rpx;
+}
+
+.recommendation-desc-text {
+  font-size: 28rpx;
+  color: #61788a;
+  line-height: 1.5;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

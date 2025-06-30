@@ -1,0 +1,86 @@
+<!--pages/flights/flights.wxml-->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="header-content">
+      <view class="title-container">
+        <text class="title">{{pageTitle}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 搜索表单 -->
+  <view class="search-form">
+    <!-- 出发地 -->
+    <view class="form-item">
+      <view class="input-box" bindtap="onDepartureTap">
+        <text class="{{departure ? 'input-text' : 'input-placeholder'}}">
+          {{departure || fromPlaceholder}}
+        </text>
+      </view>
+    </view>
+
+    <!-- 目的地 -->
+    <view class="form-item">
+      <view class="input-box" bindtap="onDestinationTap">
+        <text class="{{destination ? 'input-text' : 'input-placeholder'}}">
+          {{destination || toPlaceholder}}
+        </text>
+      </view>
+    </view>
+
+    <!-- 出发日期 -->
+    <view class="form-item">
+      <picker mode="date" value="{{departureDate}}" bindchange="onDepartureDateChange">
+        <view class="input-box">
+          <text class="{{departureDate ? 'input-text' : 'input-placeholder'}}">
+            {{departureDate || departureDatePlaceholder}}
+          </text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 返回日期 -->
+    <view class="form-item">
+      <picker mode="date" value="{{returnDate}}" bindchange="onReturnDateChange">
+        <view class="input-box">
+          <text class="{{returnDate ? 'input-text' : 'input-placeholder'}}">
+            {{returnDate || returnDatePlaceholder}}
+          </text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 乘客信息 -->
+    <view class="form-item">
+      <view class="input-box" bindtap="onPassengerTap">
+        <text class="{{passengers ? 'input-text' : 'input-placeholder'}}">
+          {{passengers || passengersPlaceholder}}
+        </text>
+      </view>
+    </view>
+
+    <!-- 搜索按钮 -->
+    <view class="search-button-container">
+      <button class="search-button" bindtap="onSearchFlights">
+        {{searchButton}}
+      </button>
+    </view>
+  </view>
+</view>
+
+<!-- 城市选择器 -->
+<view class="city-picker {{showCityPicker ? 'show' : ''}}" catchtap="onCityPickerMask">
+  <view class="city-picker-content" catchtap="">
+    <view class="city-picker-header">
+      <text class="city-picker-title">{{selectCityTitle}}</text>
+      <text class="city-picker-close" bindtap="closeCityPicker">×</text>
+    </view>
+    <scroll-view class="city-list" scroll-y="true">
+      <view wx:for="{{cities}}" wx:key="code" class="city-item" bindtap="onCitySelect" data-city="{{item}}">
+        <text class="city-name">{{item.name}}</text>
+        <text class="city-code">{{item.code}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

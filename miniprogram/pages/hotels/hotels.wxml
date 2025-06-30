@@ -1,0 +1,96 @@
+<!--pages/hotels/hotels.wxml-->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="header-content">
+      <view class="title-container">
+        <text class="title">{{pageTitle}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 搜索表单 -->
+  <view class="search-form">
+    <!-- 目的地 -->
+    <view class="form-item">
+      <view class="input-box" bindtap="onDestinationTap">
+        <image src="/images/search.svg" class="input-icon"></image>
+        <text class="{{destination ? 'input-text' : 'input-placeholder'}}">
+          {{destination || destinationPlaceholder}}
+        </text>
+      </view>
+    </view>
+
+    <!-- 入住日期 -->
+    <view class="form-item">
+      <picker mode="date" value="{{checkinDate}}" bindchange="onCheckinDateChange">
+        <view class="input-box">
+          <image src="/images/search.svg" class="input-icon"></image>
+          <text class="{{checkinDate ? 'input-text' : 'input-placeholder'}}">
+            {{checkinDate || checkinPlaceholder}}
+          </text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 退房日期 -->
+    <view class="form-item">
+      <picker mode="date" value="{{checkoutDate}}" bindchange="onCheckoutDateChange">
+        <view class="input-box">
+          <image src="/images/search.svg" class="input-icon"></image>
+          <text class="{{checkoutDate ? 'input-text' : 'input-placeholder'}}">
+            {{checkoutDate || checkoutPlaceholder}}
+          </text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 房间信息 -->
+    <view class="form-item">
+      <view class="input-box" bindtap="onRoomTap">
+        <image src="/images/search.svg" class="input-icon"></image>
+        <text class="{{rooms ? 'input-text' : 'input-placeholder'}}">
+          {{rooms || roomsPlaceholder}}
+        </text>
+      </view>
+    </view>
+
+    <!-- 搜索按钮 -->
+    <view class="search-button-container">
+      <button class="search-button" bindtap="onSearchHotels">
+        {{searchButton}}
+      </button>
+    </view>
+  </view>
+</view>
+
+<!-- 城市选择器 -->
+<view class="city-picker {{showCityPicker ? 'show' : ''}}" catchtap="onCityPickerMask">
+  <view class="city-picker-content" catchtap="">
+    <view class="city-picker-header">
+      <text class="city-picker-title">{{selectDestinationTitle}}</text>
+      <text class="city-picker-close" bindtap="closeCityPicker">×</text>
+    </view>
+    <scroll-view class="city-list" scroll-y="true">
+      <view wx:for="{{cities}}" wx:key="id" class="city-item" bindtap="onCitySelect" data-city="{{item}}">
+        <text class="city-name">{{item.name}}</text>
+        <text class="city-desc">{{item.desc}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 房间选择器 -->
+<view class="room-picker {{showRoomPicker ? 'show' : ''}}" catchtap="onRoomPickerMask">
+  <view class="room-picker-content" catchtap="">
+    <view class="room-picker-header">
+      <text class="room-picker-title">{{roomsAndGuestsTitle}}</text>
+      <text class="room-picker-close" bindtap="closeRoomPicker">×</text>
+    </view>
+    <view class="room-options">
+      <view wx:for="{{roomOptions}}" wx:key="key" class="room-option" bindtap="onRoomSelect" data-room="{{item}}">
+        <text class="room-text">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+</view>

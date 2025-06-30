@@ -1,0 +1,61 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="header-content">
+      <view class="back-button">
+        <image src="/images/search.svg" class="back-icon"></image>
+      </view>
+      <view class="title-container">
+        <text class="title">{{pageTitle}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 用户信息区域 -->
+  <view class="user-section">
+    <view class="user-info">
+      <view class="user-avatar">
+        <image src="/images/avatar-new.jpg" class="avatar-image" mode="aspectFill"></image>
+      </view>
+      <view class="user-details">
+        <text class="user-name">{{userName}}</text>
+        <text class="user-profile-link">{{viewProfile}}</text>
+        <text class="user-join-date">{{joinedIn}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 行程部分 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">{{tripsSection}}</text>
+    </view>
+    <view class="trip-list">
+      <view wx:for="{{tripItems}}" wx:key="id" class="trip-item">
+        <view class="trip-icon">
+          <image src="{{item.icon}}" class="trip-icon-img"></image>
+        </view>
+        <view class="trip-info">
+          <text class="trip-title">{{item.title}}</text>
+          <text class="trip-date">{{item.date}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 设置部分 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">{{settingsSection}}</text>
+    </view>
+    <view class="setting-list">
+      <view wx:for="{{settingItems}}" wx:key="id" class="setting-item" bindtap="onSettingTap" data-setting="{{item.id}}">
+        <view class="setting-icon">
+          <image src="{{item.icon}}" class="setting-icon-img"></image>
+        </view>
+        <text class="setting-title">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</view>
