@@ -18,7 +18,7 @@ const CONSTANTS = {
   
   // 云开发配置
   CLOUD: {
-    ENV_ID: 'cloud1-3gj324qu040f5d39',
+    ENV_ID: 'YOUR_CLOUD_ENV_ID',
     FUNCTIONS: {
       GET_OPENID: 'getOpenId',
       REPORT_ERROR: 'reportError'

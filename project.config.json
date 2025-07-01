@@ -51,7 +51,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "latest",
-  "appid": "wxfd930e4694b4412d",
+  "appid": "YOUR_WECHAT_APPID",
   "projectname": "云开发空白项目",
   "isGameTourist": false,
   "condition": {
